@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rentique</title>
+    <script src="https://kit.fontawesome.com/f0faaa4690.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main>
+        <section id="header">
+            <a href="#"><img src="images/new rentique logo.png" class="logo" alt="Rentique Logo"></a>
+            <div>
+                <ul id="navbar">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a class="active" href="newshop.html">Shop</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="prestyle.html" class="customize-button">Customize Your Outfit</a></li>
+                    <li><a href="cart.html"><i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                    </a></li>
+                    <li><a href="myaccount.html"><i class="fa-regular fa-user" aria-hidden="true"></i></i></a></li>
+                  </ul>
+                </ul>
+            </div>
+        </section>
+
+
+        <section class="categories">
+            <div class="category-box" onclick="window.location.href='ocassionwedding.html'">
+                <img src="images/banner/wedding.jpg" alt="Wedding Wear">
+                <h2>Wedding Wear</h2>
+            </div>
+            <div class="category-box" onclick="window.location.href='children.html'">
+                <img src="images/banner/children.jpg" alt="Children Wear">
+                <h2>Children Wear</h2>
+            </div>
+
+        </section>
+
+        <section class="categories">
+            <div class="category-box" onclick="window.location.href='formal_event.html'">
+                <img src="images/banner/fromal event.jpg" alt="Children Wear">
+                <h2>Formal Events</h2>
+            </div>
+            <div class="category-box" onclick="window.location.href='maternal.html'">
+                <img src="images/banner/nmaternal.png" alt="Children Wear">
+                <h2>Maternal Wear</h2>
+            </div>
+        </section>
+
+        <section id="wedding" class="sub-category hidden">
+            <h3>Wedding Wear Options</h3>
+            <div class="sub-category-box" onclick="window.location.href='wedding.html'">
+                <img src="C:/Users/SIDDHANT/Desktop/Rental System/New folder/images/banner/bride.jpg" alt="Bridal Dresses">
+                <h4>Bridal Dresses</h4>
+            </div>
+            <div class="sub-category-box" onclick="window.location.href='wedding.html'">
+                <img src="C:/Users/SIDDHANT/Desktop/Rental System/New folder/images/banner/groom.png" alt="Groom Attire">
+                <h4>Groom Attire</h4>
+            </div>
+        </section>
+
+        <section id="children" class="sub-category hidden">
+            <h3>Children Wear Options</h3>
+            <div class="sub-category-box" onclick="window.location.href='children.html'">
+                <img src="images/fancy_dresses_image.jpg" alt="Fancy Dresses">
+                <h4>Fancy Dresses</h4>
+            </div>
+            <div class="sub-category-box" onclick="window.location.href='children.html'">
+                <img src="images/traditional_outfits_image.jpg" alt="Traditional Outfits">
+                <h4>Traditional Outfits</h4>
+            </div>
+        </section>
+
+        <section id="newsletter" class="section-p1 section-m1">
+            <div class="newstext">
+                <h4>Sign Up For Newsletter</h4>
+                <p>Get E-mail updates about our latest shop and <span>special offer</span></p>
+            </div>
+            <div class="form">
+                <input type="text" placeholder="Your email address">
+                <button class="normal">Sign Up</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="section-p1">
+        <div class="col">
+          <img class="logo" src="images/new rentique logo.png" alt="">
+          <h4>Contact</h4>
+          <p><strong>Address:</strong> 23J6+6JC, Sector 4, Kharghar, Navi Mumbai, Maharashtra 410210</p>
+          <p><strong>Phone:</strong> 022 2774 5722</p>
+          <p><strong>Hours:</strong> 10:00 - 18:00, Mon - Sat</p>
+          <div class="follow">
+            <h4>Follow us</h4>
+            <div class="icon">
+              <i class="fab fa-facebook-f"></i>
+              <i class="fab fa-twitter"></i>
+              <i class="fab fa-instagram"></i>
+              <i class="fab fa-pinterest-p"></i>
+              <i class="fab fa-youtube"></i>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col">
+          <h4>About</h4>
+          <a href="#">About us</a>
+          <a href="#">Delivery Information</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms & Conditions</a>
+          <a href="#">Contact Us</a>
+        </div>
+  
+        <div class="col">
+          <h4>My Account</h4>
+          <a href="#">Sign In</a>
+          <a href="#">View Cart</a>
+          <a href="#">My Wishlist</a>
+          <a href="#">Track My Order</a>
+          <a href="#">Help</a>
+        </div>
+  
+        <div class="col install">
+          <h4>Install App</h4>
+          <p>From App Store or Google Play</p>
+          <div class="row">
+            <img src="images/pay/app.jpg" alt="">
+            <img src="images/pay/play.jpg" alt="">
+          </div>
+          <p>Secured Payment Gateways</p>
+          <img src="images/pay/pay.png" alt="">
+        </div>
+  
+        <div class="copyright">
+          <p>© 2024, MiniProject-2A Group-17</p>
+        </div>
+  
+    </footer>
+
+    <!--
+    <script>
+        function toggleCategory(categoryId) {
+            var categoryElement = document.getElementById(categoryId);
+            if (categoryElement.classList.contains('hidden')) {
+                categoryElement.classList.remove('hidden');
+            } else {
+                categoryElement.classList.add('hidden');
+            }
+        }
+    </script>
+    -->
+
+    <script>
+        // Check login status when any user-specific action is taken
+        document.addEventListener('DOMContentLoaded', function() {
+            const isLoggedIn = localStorage.getItem('isLoggedIn');
+    
+            // Example: Redirect if accessing a user-specific feature
+            const userIcon = document.querySelector('.fa-user');
+            if (userIcon) {
+                userIcon.parentElement.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    if (isLoggedIn === 'true') {
+                        window.location.href = 'myaccount.html';
+                    } else {
+                        window.location.href = 'login.html';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

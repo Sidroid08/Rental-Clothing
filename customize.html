@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customize Your Outfit</title>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+    <link rel="stylesheet" href="customize.css">
+</head>
+<body>
+    <div class="customization-section">
+        <h2>Customize Your Outfit</h2>
+        <form id="customization-form">
+            <div class="form-container">
+
+                <!-- Section 1: Basic Details -->
+                <div class="section-box fade-in">
+                    <h3>Basic Details</h3>
+                    <div class="form-group">
+                        <label for="clothing-type">Type of Clothing</label>
+                        <select id="clothing-type" name="clothing-type" required>
+                            <option value="" disabled selected>Select type</option>
+                            <option value="dress">Dress</option>
+                            <option value="shirt">Shirt</option>
+                            <option value="pants">Pants</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="occasion">Occasion</label>
+                        <select id="occasion" name="occasion" required>
+                            <option value="" disabled selected>Select occasion</option>
+                            <option value="wedding">Wedding</option>
+                            <option value="party">Party</option>
+                            <option value="casual">Casual</option>
+                            <option value="formal">Formal</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="style">Preferred Style</label>
+                        <select id="style" name="style" required>
+                            <option value="" disabled selected>Select style</option>
+                            <option value="casual">Casual</option>
+                            <option value="formal">Formal</option>
+                            <option value="trendy">Trendy</option>
+                            <option value="classic">Classic</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="size">Size</label>
+                        <input type="text" id="size" name="size" required placeholder="Enter your size (e.g., M, L, 10)">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fit">Specific Fit</label>
+                        <select id="fit" name="fit">
+                            <option value="" disabled selected>Select fit</option>
+                            <option value="regular">Regular</option>
+                            <option value="slim">Slim</option>
+                            <option value="loose">Loose</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Section 2: Appearance Preferences -->
+                <div class="section-box fade-in delay-1">
+                    <h3>Appearance Preferences</h3>
+                    <div class="form-group">
+                        <label for="color">Preferred Color</label>
+                        <input type="color" id="color" name="color" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pattern">Color Pattern</label>
+                        <select id="pattern" name="pattern">
+                            <option value="solid">Solid</option>
+                            <option value="pattern">Pattern</option>
+                            <option value="combination">Combination</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fabric">Preferred Fabric</label>
+                        <select id="fabric" name="fabric" required>
+                            <option value="" disabled selected>Select fabric</option>
+                            <option value="cotton">Cotton</option>
+                            <option value="silk">Silk</option>
+                            <option value="linen">Linen</option>
+                            <option value="wool">Wool</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="neckline">Neckline Style</label>
+                        <select id="neckline" name="neckline">
+                            <option value="v-neck">V-neck</option>
+                            <option value="round-neck">Round Neck</option>
+                            <option value="collar">Collar</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sleeve">Sleeve Style</label>
+                        <select id="sleeve" name="sleeve">
+                            <option value="sleeveless">Sleeveless</option>
+                            <option value="short-sleeve">Short Sleeves</option>
+                            <option value="long-sleeve">Long Sleeves</option>
+                            <option value="bell-sleeve">Bell Sleeves</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Section 3: Additional Details -->
+                <div class="section-box fade-in delay-2">
+                    <h3>Additional Details</h3>
+                    <div class="form-group">
+                        <label for="length">Preferred Length</label>
+                        <select id="length" name="length">
+                            <option value="mini">Mini</option>
+                            <option value="knee-length">Knee Length</option>
+                            <option value="maxi">Maxi</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="accessories">Accessories</label>
+                        <input type="text" id="accessories" name="accessories" placeholder="Enter accessories (e.g., buttons, belts)">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="closure">Special Closures</label>
+                        <select id="closure" name="closure">
+                            <option value="zipper">Zipper</option>
+                            <option value="buttons">Buttons</option>
+                            <option value="hooks">Hooks</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="custom-request">Custom Requests</label>
+                        <textarea id="custom-request" name="custom-request" rows="3" placeholder="Describe any special requests..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reference">Upload Reference Image</label>
+                        <input type="file" id="reference" name="reference" accept="image/*">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="budget">Budget</label>
+                        <input type="number" id="budget" name="budget" required placeholder="Enter your budget">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date">Required By Date</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                </div>
+
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Customization</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('customization-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert("Customization Submitted Successfully!");
+        });
+    </script>
+    <script>
+        // Your Firebase configuration
+        const firebaseConfig = {
+
+        };
+
+        // Initialize Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore(); // or firebase.database() for Realtime Database
+
+        // Submit customization form
+        function submitCustomization(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            const formData = {
+                clothingType: document.getElementById('clothing-type').value,
+                occasion: document.getElementById('occasion').value,
+                style: document.getElementById('style').value,
+                size: document.getElementById('size').value,
+                fit: document.getElementById('fit').value,
+                color: document.getElementById('color').value,
+                pattern: document.getElementById('pattern').value,
+                fabric: document.getElementById('fabric').value,
+                neckline: document.getElementById('neckline').value,
+                sleeve: document.getElementById('sleeve').value,
+                length: document.getElementById('length').value,
+                accessories: document.getElementById('accessories').value,
+                closure: document.getElementById('closure').value,
+                customRequest: document.getElementById('custom-request').value,
+                budget: document.getElementById('budget').value,
+                date: document.getElementById('date').value
+            };
+
+            // Add data to Firestore
+            db.collection("customizations").add(formData)
+                .then(() => {
+                    alert("Customization submitted successfully!");
+                })
+                .catch((error) => {
+                    console.error("Error adding document: ", error);
+                });
+        }
+    </script>
+
+</body>
+</html>

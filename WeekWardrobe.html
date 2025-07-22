@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeeklyWardrobe</title>
+    <script src="https://kit.fontawesome.com/f0faaa4690.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css"> <!-- Assuming you have an existing style.css -->
+    <style>
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Spartan', sans-serif;
+        }
+        
+        h1 {
+        font-size: 50px;
+        line-height: 64px;
+        color: #222;
+        }
+        
+        h2 {
+        font-size: 46px;
+        line-height: 54px;
+        color: #222;
+        }
+        
+        h3 {
+        font-size: 20px;
+        line-height: 54px;
+        color: #222;
+        }
+        
+        h4 {
+        font-size: 20px;
+        color: #222;
+        }
+        
+        
+        
+        h6 {
+        font-weight: 700;
+        font-size: 12px;
+        }
+        
+        p {
+        font-size: 16px;
+        color: #465b52;
+        margin: 15px 0 20px 0;
+        }
+        
+        .section-p1 {
+        padding: 40px 80px;
+        }
+        
+        .section-m1 {
+        margin: 40px 0;
+        }
+        
+        button.normal{
+        font-size: 14px;
+        font-weight: 600;
+        padding: 15px 30px;
+        color: #000;
+        background-color: #fff;
+        border-radius: 4px;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        transition: 0.2s;
+        }
+        
+        body {
+        width: 100%;
+        }
+        
+        #header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 80px;
+        background: black;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+        z-index: 999;
+        position: sticky;
+        top: 0;
+        left: 0;
+        }
+        
+        #navbar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        }
+        
+        #navbar li {
+        list-style: none;
+        padding: 0 20px;
+        position: relative;
+        }
+        
+        #navbar li a {
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 600;
+        color: #e3e6f3;
+        transition: 0.3s ease;
+        }
+        
+        #navbar li a:hover,
+        #navbar li a.active {
+        color: #088178;
+        }
+        
+        #navbar li a.active::after,
+        #navbar li a:hover::after {
+        content: "";
+        width: 30%;
+        height: 2px;
+        background: #088178;
+        position: absolute;
+        bottom: -4px;
+        left: 20px;
+        }
+        
+        /* Ensure the logo fits perfectly without affecting the navbar */
+        #header .logo {
+        max-width: 150px; /* Set max width to control logo size */
+        height: auto; /* Maintain aspect ratio */
+        object-fit: contain; /* Ensure the logo fits within the dimensions without stretching */
+        margin-right: 20px; /* Adjust spacing between the logo and navbar if needed */
+        }
+          
+    </style>
+
+</head>
+
+
+    
+
+
+<body id="wardrobe-planner">
+
+
+
+    <main>
+        <section id="header">
+            <a href="#"><img src="images/new rentique logo.png" class="logo" alt="Rentique Logo"></a>
+            <div>
+                <ul id="navbar">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a class="active" href="prestyle.html" class="customize-button">Customize Your Outfit</a></li>
+                    <li><a href="cart.html"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a></li>
+                    <li><a href="myaccount.html"><i class="fa-regular fa-user" aria-hidden="true"></i></i></a></li>
+                </ul>
+            </div>
+        </section>
+    
+        <div class="wardrobe-container">
+            <!-- Seven boxes for each day -->
+            <div class="day-box" id="monday">
+                <h3>Monday</h3>
+                <div class="clothing-items" id="monday-items">
+                    <!-- Clothing items will be listed here -->
+                </div>
+                <button onclick="openModal('monday')">Add Clothing</button>
+            </div>
+            <div class="day-box" id="tuesday">
+                <h3>Tuesday</h3>
+                <div class="clothing-items" id="tuesday-items"></div>
+                <button onclick="openModal('tuesday')">Add Clothing</button>
+            </div>
+            <div class="day-box" id="wednesday">
+                <h3>Wednesday</h3>
+                <div class="clothing-items" id="wednesday-items"></div>
+                <button onclick="openModal('wednesday')">Add Clothing</button>
+            </div>
+            <div class="day-box" id="thursday">
+                <h3>Thursday</h3>
+                <div class="clothing-items" id="thursday-items"></div>
+                <button onclick="openModal('thursday')">Add Clothing</button>
+            </div>
+            <div class="day-box" id="friday">
+                <h3>Friday</h3>
+                <div class="clothing-items" id="friday-items"></div>
+                <button onclick="openModal('friday')">Add Clothing</button>
+            </div>
+            <div class="day-box" id="saturday">
+                <h3>Saturday</h3>
+                <div class="clothing-items" id="saturday-items"></div>
+                <button onclick="openModal('saturday')">Add Clothing</button>
+            </div>
+            <div class="day-box" id="sunday">
+                <h3>Sunday</h3>
+                <div class="clothing-items" id="sunday-items"></div>
+                <button onclick="openModal('sunday')">Add Clothing</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal Structure -->
+    <div id="clothingModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                Select Clothing for <span id="currentDayLabel"></span>
+            </div>
+            <div class="modal-columns">
+                <div id="shirts-column" class="modal-column">
+                    <!-- Shirt items will be dynamically populated -->
+                </div>
+                <div id="trousers-column" class="modal-column">
+                    <!-- Trouser items will be dynamically populated -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-confirm" onclick="confirmSelection()">Confirm</button>
+                <button class="btn-close" onclick="closeModal()">Close</button>
+            </div>
+        </div>
+    </div>
+  
+</body>
+    <script>
+        let currentDay = "";
+        const savedPreferences = {};
+        let selectedClothes = { shirt: null, trouser: null };
+    
+        function openModal(day) {
+            currentDay = day;
+            document.getElementById("currentDayLabel").textContent = day;
+            const modal = document.getElementById("clothingModal");
+            modal.style.display = "flex";
+        
+            // Sample clothing data with images
+            const shirts = [
+                { name: "T-Shirt", image: "images/products/tshirt.webp" },
+                { name: "Formal Shirt", image: "images/products/c4.webp" },
+                { name: "Casual Shirt", image: "images/products/casual shirt.jpg" }
+            ];
+            const trousers = [
+                { name: "Jeans", image: "images/products/jeans.avif" },
+                { name: "Chinos", image: "images/products/chinos.webp" },
+                { name: "Formal Trousers", image: "images/products/formal-trouser.webp" }
+            ];
+        
+            populateColumn("shirts-column", shirts, "shirt");
+            populateColumn("trousers-column", trousers, "trouser");
+        }
+        
+        function populateColumn(columnId, items, type) {
+            const column = document.getElementById(columnId);
+            column.innerHTML = "";
+        
+            items.forEach(item => {
+                const itemDiv = document.createElement("div");
+                itemDiv.classList.add("item");
+        
+                const img = document.createElement("img");
+                img.src = item.image;
+                img.alt = item.name;
+        
+                const text = document.createElement("p");
+                text.textContent = item.name;
+        
+                itemDiv.appendChild(img);
+                itemDiv.appendChild(text);
+        
+                itemDiv.onclick = () => selectClothing(itemDiv, type, item.name);
+                column.appendChild(itemDiv);
+            });
+        }
+      
+    
+        function selectClothing(element, type, item) {
+            const column = document.getElementById(type === "shirt" ? "shirts-column" : "trousers-column");
+            Array.from(column.children).forEach(child => child.classList.remove("selected"));
+            element.classList.add("selected");
+            selectedClothes[type] = item;
+        }
+    
+        function confirmSelection() {
+            if (selectedClothes.shirt && selectedClothes.trouser) {
+                // Update the selected day's clothing items
+                const clothingList = document.getElementById(`${currentDay}-items`);
+                clothingList.innerHTML = `
+                    <p>Shirt: ${selectedClothes.shirt}</p>
+                    <p>Trouser: ${selectedClothes.trouser}</p>
+                `;
+    
+                // Save the selection for the current day
+                savedPreferences[currentDay] = { ...selectedClothes };
+    
+                // Reset selection for next use
+                selectedClothes = { shirt: null, trouser: null };
+    
+                closeModal();
+            } else {
+                alert("Please select both a shirt and a trouser.");
+            }
+        }
+    
+        function closeModal() {
+            const modal = document.getElementById("clothingModal");
+            modal.style.display = "none";
+        }
+    
+        // Close the modal when clicking outside the content
+        window.onclick = function(event) {
+            const modal = document.getElementById("clothingModal");
+            if (event.target === modal) {
+                closeModal();
+            }
+        };
+    </script>
+
+</html>
+

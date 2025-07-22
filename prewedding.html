@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Wear - Rentique</title>
+    <script src="https://kit.fontawesome.com/f0faaa4690.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <section id="header">
+            <a href="#"><img src="images/new rentique logo.png" class="logo" alt="Rentique Logo"></a>
+            <div>
+                <ul id="navbar">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a class="active" href="shop.html">Shop</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="prestyle.html" class="customize-button">Customize Your Outfit</a></li>
+                    <li><a href="cart.html"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a></li>
+                    <li><a href="myaccount.html"><i class="fa-regular fa-user" aria-hidden="true"></i></i></a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="wedding-categories">
+            <h2>Wedding Wear Categories</h2>
+            <div class="category-grid">
+                <div class="category-box" onclick="window.location.href='bridal.html'">
+                    <img src="images/banner/bride.jpg" alt="Bridal Dresses">
+                    <h3>Bridal Dresses</h3>
+                </div>
+                <div class="category-box" onclick="window.location.href='groom.html'">
+                    <img src="images/banner/groom.png" alt="Groom Attire">
+                    <h3>Groom Attire</h3>
+                </div>
+                <div class="category-box" onclick="window.location.href='mehendi.html'">
+                    <img src="images/banner/mehendi.jpg" alt="Mehendi Outfit">
+                    <h3>Mehendi</h3>
+                </div>
+                <div class="category-box" onclick="window.location.href='sangeet.html'">
+                    <img src="images/banner/sangeet.jpg" alt="Sangeet Outfit">
+                    <h3>Sangeet</h3>
+                </div>
+                <div class="category-box" onclick="window.location.href='reception.html'">
+                    <img src="images/banner/reception.jpg" alt="Reception Outfit">
+                    <h3>Reception</h3>
+                </div>
+                <div class="category-box" onclick="window.location.href='haldi.html'">
+                    <img src="images/banner/haldi.jpg" alt="Haldi Outfit">
+                    <h3>Haldi</h3>
+                </div>
+            </div>
+        </section>
+
+        <section id="newsletter" class="section-p1 section-m1">
+            <div class="newstext">
+                <h4>Sign Up For Newsletter</h4>
+                <p>Get E-mail updates about our latest shop and <span>special offers</span></p>
+            </div>
+            <div class="form">
+                <input type="text" placeholder="Your email address">
+                <button class="normal">Sign Up</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo" src="images/new rentique logo.png" alt="Rentique Logo">
+            <h4>Contact</h4>
+            <p><strong>Address:</strong> 23J6+6JC, Sector 4, Kharghar, Navi Mumbai, Maharashtra 410210</p>
+            <p><strong>Phone:</strong> 022 2774 5722</p>
+            <p><strong>Hours:</strong> 10:00 - 18:00, Mon - Sat</p>
+            <div class="follow">
+                <h4>Follow Us</h4>
+                <div class="icon">
+                    <i class="fa fa-facebook-f"></i>
+                    <i class="fa fa-twitter"></i>
+                    <i class="fa fa-instagram"></i>
+                    <i class="fa fa-pinterest-p"></i>
+                </div>
+            </div>
+        </div>
+        <p>2024 Rentique All Rights Reserved</p>
+    </footer>
+
+    <script>
+        // Check login status when any user-specific action is taken
+        document.addEventListener('DOMContentLoaded', function() {
+            const isLoggedIn = localStorage.getItem('isLoggedIn');
+    
+            // Example: Redirect if accessing a user-specific feature
+            const userIcon = document.querySelector('.fa-user');
+            if (userIcon) {
+                userIcon.parentElement.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    if (isLoggedIn === 'true') {
+                        window.location.href = 'myaccount.html';
+                    } else {
+                        window.location.href = 'login.html';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account</title>
+    <script src="https://kit.fontawesome.com/f0faaa4690.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section id="header">
+        <a href="#"><img src="images/new rentique logo.png" class="logo" alt=""></a>
+        <div>
+          <ul id="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="newshop.html">Shop</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="prestyle.html" class="customize-button">Customize Your Outfit</a></li>
+            <li><a href="cart.html"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a></li>
+            <li><a class="active" href="myaccount.html"><i class="fa-regular fa-user" aria-hidden="true"></i></a></li>
+          </ul>
+        </div>
+    </section>
+    
+    <section id="my-account">
+        <div class="container">
+            <h1>My Account</h1>
+            <div class="account-section">
+                <!-- Account Menu -->
+                <div class="account-menu">
+                    <ul>
+                        <li><a href="#" class="active">Dashboard</a></li>
+                        <li><a href="#">Orders</a></li>
+                        <li><a href="#">Account Details</a></li>
+                        <li><a href="#">Address Book</a></li>
+                        <li><a href="#">Payment Methods</a></li>
+                        <li><a href="subscription.html">Subscription</a></li>
+                        <li><a id="logout-btn" href="#">Logout</a></li> <!-- Changed to use an ID for logout -->
+                    </ul>
+                </div>
+
+                <!-- Account Content -->
+                <div class="account-content">
+                    <h2>Account Information</h2>
+                    <div class="account-info">
+                        <div>
+                            <h3>Personal Information</h3>
+                            <p id="user-name">Name: </p>
+                            <p id="user-email">Email: </p>
+                            <p id="user-phone">Phone: </p>
+                        </div>
+                        <div>
+                            <h3>Shipping Address</h3>
+                            <p id="user-address">Address: </p>
+                        </div>
+                    </div>
+                  
+                    <h2>Order History</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th>Total</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#12345</td>
+                                <td>Sept 10, 2024</td>
+                                <td>Completed</td>
+                                <td>₹7,000</td>
+                                <td><button>View</button></td>
+                            </tr>
+                            <tr>
+                                <td>#12344</td>
+                                <td>Sept 9, 2024</td>
+                                <td>Processing</td>
+                                <td>₹6,720</td>
+                                <td><button>View</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!-- Cart Overview Section -->
+                    <h2>Cart Overview</h2>
+                    <table id="cart-items">
+                        <thead>
+                            <tr>
+                                <th>Product Name</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Cart items will be dynamically populated here -->
+                        </tbody>
+                    </table>
+                    <p id="cart-total">Total: ₹0</p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="section-p1">
+        <div class="col">
+          <img class="logo" src="images/new rentique logo.png" alt="">
+          <h4>Contact</h4>
+          <p><strong>Address:</strong> 23J6+6JC, Sector 4, Kharghar, Navi Mumbai, Maharashtra 410210</p>
+          <p><strong>Phone:</strong> 022 2774 5722</p>
+          <p><strong>Hours:</strong> 10:00 - 18:00, Mon - Sat</p>
+          <div class="follow">
+            <h4>Follow us</h4>
+            <div class="icon">
+              <i class="fab fa-facebook-f"></i>
+              <i class="fab fa-twitter"></i>
+              <i class="fab fa-instagram"></i>
+              <i class="fab fa-pinterest-p"></i>
+              <i class="fab fa-youtube"></i>
+            </div>
+          </div>
+        </div>
+    
+        <div class="col">
+          <h4>About</h4>
+          <a href="#">About us</a>
+          <a href="#">Delivery Information</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms & Conditions</a>
+          <a href="#">Contact Us</a>
+        </div>
+    
+        <div class="col">
+          <h4>My Account</h4>
+          <a href="#">Sign In</a>
+          <a href="#">View Cart</a>
+          <a href="#">My Wishlist</a>
+          <a href="#">Track My Order</a>
+          <a href="#">Help</a>
+        </div>
+    
+        <div class="col install">
+          <h4>Install App</h4>
+          <p>From App Store or Google Play</p>
+          <div class="row">
+            <img src="images/pay/app.jpg" alt="">
+            <img src="images/pay/play.jpg" alt="">
+          </div>
+          <p>Secured Payment Gateways</p>
+          <img src="images/pay/pay.png" alt="">
+        </div>
+    
+        <div class="copyright">
+          <p>© 2024, MiniProject-2A Group-17</p>
+        </div>
+    </footer>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
+        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
+        import { getDatabase, ref, get } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js";
+    
+        // Your Firebase configuration
+        const firebaseConfig = {
+
+        };
+    
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const database = getDatabase(app);
+    
+        // Check if user is logged in and fetch user data
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                // Get user data from Firebase
+                const userRef = ref(database, 'users/' + user.uid);
+                get(userRef)
+                    .then((snapshot) => {
+                        if (snapshot.exists()) {
+                            const userData = snapshot.val();
+                            
+                            // Display user data on the account page
+                            document.getElementById('user-name').textContent = `Name: ${userData.full_name}`;
+                            document.getElementById('user-email').textContent = `Email: ${userData.email}`;
+                            document.getElementById('user-address').textContent = `Address: ${userData.address}`;
+                            document.getElementById('user-phone').textContent = `Phone: ${userData.phone}`;
+                        } else {
+                            console.log('No user data available');
+                        }
+                    })
+                    .catch((error) => {
+                        console.error('Error fetching user data:', error);
+                        alert('Failed to load user data. Please try again.');
+                    });
+            } else {
+                // If not logged in, redirect to login page
+                window.location.href = 'login.html';
+            }
+        });
+    </script>
+
+    <script>
+        // Check login status when the page loads
+        window.addEventListener('DOMContentLoaded', function() {
+            const isLoggedIn = localStorage.getItem('isLoggedIn');
+            if (isLoggedIn !== 'true') {
+                window.location.href = 'login.html'; // Redirect to login page if not logged in
+            } else {
+                loadCartItems(); // Load cart items if logged in
+            }
+        });
+
+        // Logout function
+        document.getElementById('logout-btn').addEventListener('click', function(event) {
+            event.preventDefault();
+            
+            // Clear login state
+            localStorage.removeItem('isLoggedIn'); 
+            localStorage.removeItem('userEmail'); 
+            
+            // Redirect to login page
+            window.location.href = 'login.html';
+        });
+
+        // Function to load cart items from localStorage
+        function loadCartItems() {
+            const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            const cartTableBody = document.querySelector('#cart-items tbody');
+            cartTableBody.innerHTML = ''; // Clear previous items
+            
+            let totalCost = 0; // Variable to keep track of the total cost
+            cartItems.forEach(item => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${item.name}</td>
+                    <td>${item.quantity}</td>
+                    <td>₹${item.price}</td>
+                    <td>₹${(item.price * item.quantity).toFixed(2)}</td>
+                `;
+                cartTableBody.appendChild(row);
+                
+                totalCost += item.price * item.quantity; // Update total cost
+            });
+            document.getElementById('cart-total').textContent = `Total: ₹${totalCost.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>

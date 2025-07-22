@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    table, th, td {
+      border: 1px solid black;
+    }
+    th, td {
+      padding: 8px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Product Usage History</h1>
+  <div id="product-history"></div>
+
+  <script>
+    // Function to get URL parameters
+    function getUrlParameter(name) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(name);
+    }
+
+    // Function to display the product history in a table
+    function displayProductHistory(data) {
+      // Parse the data from the URL (JSON format)
+      const productHistory = JSON.parse(decodeURIComponent(data));
+
+      // Create a table to display the product history
+      let table = "<table><tr><th>Date Issued</th><th>Days Used</th></tr>";
+
+      // Loop through the product history and add rows to the table
+      productHistory.forEach(entry => {
+        table += `<tr><td>${entry.dateIssued}</td><td>${entry.daysUsed}</td></tr>`;
+      });
+
+      table += "</table>";
+
+      // Insert the table into the page
+      document.getElementById("product-history").innerHTML = table;
+    }
+
+    // Get the product history data from the URL
+    const productHistoryData = getUrlParameter("data");
+
+    if (productHistoryData) {
+      displayProductHistory(productHistoryData);
+    } else {
+      document.getElementById("product-history").innerHTML = "<p>No product history found.</p>";
+    }
+  </script>
+</body>
+</html>

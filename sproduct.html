@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rentique</title>
+    <script src="https://kit.fontawesome.com/f0faaa4690.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+  </head>
+  <body>
+    <section id="header">
+      <a href="#"><img src="images\new rentique logo.png" class="logo" alt=""></a>
+
+      <div>
+        <ul id="navbar">
+          <li><a href="index.html">Home</a></li>
+          <li><a class="active" href="newshop.html">Shop</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="prestyle.html" class="customize-button">Customize Your Outfit</a></li>
+          <li><a href="cart.html"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a></li>
+          <li><a href="myaccount.html"><i class="fa-regular fa-user" aria-hidden="true"></i></a></li>
+          
+        </ul>
+      </div>
+    </section>
+
+    <section id="prodetails" class="section-p1">
+      <div class="single-pro-image">
+        <img src="" width="100%" id="MainImg" alt="">
+
+        <div class="small-img-group">
+          <div class="small-img-col">
+            <img src="" width="100%" class="small-img" alt="">
+          </div>
+          <div class="small-img-col">
+            <img src="" width="100%" class="small-img" alt="">
+          </div>
+          <div class="small-img-col">
+            <img src="" width="100%" class="small-img" alt="">
+          </div>
+          <div class="small-img-col">
+            <img src="" width="100%" class="small-img" alt="">
+          </div>
+        </div>
+      </div>
+
+      <div class="single-pro-details">
+        <h6>Home / Product</h6>
+        <h4 id="product-name">Product Name</h4>
+        <h2 id="product-price">₹0</h2>
+        <select id="product-size">
+          <option>Select Size</option>
+          <option>Small</option>
+          <option>Medium</option>
+          <option>Large</option>
+          <option>XL</option>
+          <option>XXL</option>
+        </select>
+        <input type="number" value="1" id="quantity">
+        <button class="normal" id="add-to-cart">Add To Cart</button>
+
+        <!-- Button to generate QR Code -->
+        <div>
+        <button id="generate-qrcode-btn">Generate QR Code</button>
+        </div>
+        
+        <!-- Modal for QR Code -->
+        <div id="qr-modal" class="modal">
+          <div class="modal-content">
+            <span id="close-modal" class="close-btn">&times;</span>
+            <div id="qrcode"></div>
+          </div>
+        </div>
+        
+
+        <!-- New Section for Authenticity Check -->
+        <h4>Authenticity Check</h4>
+        <p id="authenticity-code">Code: <span id="auth-code">XYZ123456</span></p>
+
+        <!-- Date Picker Input -->
+        <label for="rental-date">Select Rental Date:</label>
+        <input type="date" id="rental-date" class="date-picker">
+
+        <h4>Product Details</h4>
+        <p id="product-description"></p>
+      </div>
+    </section>
+
+    <section id="product1" class="section-p1">
+      <h2>Featured Products</h2>
+      <p>Summer Collection New Modern Designs</p>
+      <div class="pro-container">
+        <div class="pro">
+          <img src="images/products/ndress1.jpg" alt="Product Image">
+          <div class="des">
+            <span>Sudeshna Urban</span>
+            <h5>Off Shoulder Jumpsuit</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>₹780</h4>
+          </div>
+          <a href="#"><i class="fa-light fa-cart-shopping cart"></i></a>
+        </div>
+
+        <div class="pro">
+          <img src="images/products/ndress2.jpg" alt="Product Image">
+          <div class="des">
+            <span>JAINEE</span>
+            <h5>Red & Black Saree</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>₹3,020</h4>
+          </div>
+          <a href="#"><i class="fa-light fa-cart-shopping cart"></i></a>
+        </div>
+
+        <div class="pro">
+          <img src="images/products/ndress3.webp" alt="Product Image">
+          <div class="des">
+            <span>Kaku Fancy Dresses</span>
+            <h5>Tiger Bagh Wild Animal Kids Fancy Dress Costume </h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>₹299</h4>
+          </div>
+          <a href="#"><i class="fa-light fa-cart-shopping cart"></i></a>
+        </div>
+
+        <div class="pro">
+          <img src="images/products/ndress4.webp" alt="Product Image">
+          <div class="des">
+            <span>Kaku Fancy Dresses</span>
+            <h5>Spiderman with Gloves Superhero Kids Fancy Dress Costume</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>₹279</h4>
+          </div>
+          <a href="#"><i class="fa-light fa-cart-shopping cart"></i></a>
+        </div>
+
+        
+
+      </div>
+    </section>
+
+    <section id="newsletter" class="section-p1 section-m1">
+      <div class="newstext">
+        <h4>Sign Up For Newsletter</h4>
+        <p>Get E-mail updates about our latest shop and <span>special offer</span></p>
+      </div>
+      <div class="form">
+        <input type="text" placeholder="Your email address">
+        <button class="normal">Sign Up</button>
+      </div>
+    </section>
+
+    <footer class="section-p1">
+      <div class="col">
+        <img class="logo" src="images/new rentique logo.png" alt="">
+        <h4>Contact</h4>
+        <p><strong>Address:</strong> 23J6+6JC, Sector 4, Kharghar, Navi Mumbai, Maharashtra 410210</p>
+        <p><strong>Phone:</strong> 022 2774 5722</p>
+        <p><strong>Hours:</strong> 10:00 - 18:00, Mon - Sat</p>
+        <div class="follow">
+          <h4>Follow us</h4>
+          <div class="icon">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-pinterest-p"></i>
+            <i class="fab fa-youtube"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <h4>About</h4>
+        <a href="#">About us</a>
+        <a href="#">Delivery Information</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Contact Us</a>
+      </div>
+
+      <div class="col">
+        <h4>My Account</h4>
+        <a href="#">Sign In</a>
+        <a href="#">View Cart</a>
+        <a href="#">My Wishlist</a>
+        <a href="#">Track My Order</a>
+        <a href="#">Help</a>
+      </div>
+
+      <div class="col install">
+        <h4>Install App</h4>
+        <p>From App Store or Google Play</p>
+        <div class="row">
+          <img src="images/pay/app.jpg" alt="">
+          <img src="images/pay/play.jpg" alt="">
+        </div>
+        <p>Secured Payment Gateways</p>
+        <img src="images/pay/pay.png" alt="">
+      </div>
+
+      <div class="copyright">
+        <p>© 2024, MiniProject-2A Group-17</p>
+      </div>
+
+    </footer>
+
+    <script>
+      // Change Main Product Image on Thumbnail Click
+      var mainImg = document.getElementById("MainImg");
+      var smallImgs = document.getElementsByClassName("small-img");
+    
+      for (var i = 0; i < smallImgs.length; i++) {
+          smallImgs[i].onclick = function() {
+              mainImg.src = this.src;
+          }
+      }
+    
+      // Add To Cart Button Functionality
+      var addToCartBtn = document.querySelector('.single-pro-details .normal');
+      addToCartBtn.addEventListener('click', function() {
+          var quantity = parseInt(document.querySelector('.single-pro-details input[type="number"]').value);
+          var size = document.querySelector('.single-pro-details select').value;
+          var rentalDate = document.getElementById('rental-date').value; // Get the selected date
+          var productName = document.getElementById('product-name').textContent;
+          var productPrice = document.getElementById('product-price').textContent.replace('₹', '').replace(',', '');
+          var productImage = document.getElementById('MainImg').src;
+    
+          if (size === "Select Size") {
+              alert("Please select a size.");
+          } else if (!rentalDate) {
+              alert("Please select a rental date.");
+          } else {
+              var cartItem = {
+                  name: productName,
+                  price: parseFloat(productPrice),
+                  image: productImage,
+                  quantity: quantity,
+                  size: size,
+                  rentalDate: rentalDate // Store the rental date
+              };
+      
+              addToCart(cartItem);
+          }
+      });
+    
+      // Function to add a product to the cart
+      function addToCart(product) {
+          let cart = JSON.parse(localStorage.getItem("cart")) || [];
+          const existingItemIndex = cart.findIndex(item => item.name === product.name && item.size === product.size);
+          if (existingItemIndex > -1) {
+              cart[existingItemIndex].quantity += product.quantity;
+          } else {
+              cart.push(product);
+          }
+          localStorage.setItem("cart", JSON.stringify(cart));
+          alert("Product added to cart!");
+      }
+    
+      // Featured Products - Cart Icon Click
+      document.addEventListener("DOMContentLoaded", function() {
+          // Add to Cart button functionality
+          const addToCartButtons = document.querySelectorAll(".add-to-cart");
+    
+          addToCartButtons.forEach(button => {
+              button.addEventListener("click", function() {
+                  const productId = this.getAttribute("data-id");
+                  const productName = this.getAttribute("data-name");
+                  const productPrice = parseFloat(this.getAttribute("data-price"));
+                  const productImage = this.getAttribute("data-image");
+    
+                  const cartItem = {
+                      id: productId,
+                      name: productName,
+                      price: productPrice,
+                      image: productImage,
+                      quantity: 1
+                  };
+    
+                  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    
+                  const existingItemIndex = cart.findIndex(item => item.id === productId);
+                  if (existingItemIndex > -1) {
+                      cart[existingItemIndex].quantity += 1;
+                  } else {
+                      cart.push(cartItem);
+                  }
+    
+                  localStorage.setItem("cart", JSON.stringify(cart));
+                  alert(`${productName} has been added to your cart!`);
+              });
+          });
+      });
+    
+      
+    
+      // Newsletter Signup
+      var newsletterForm = document.querySelector('#newsletter .form');
+      newsletterForm.querySelector('button').addEventListener('click', function() {
+          var email = newsletterForm.querySelector('input[type="text"]').value;
+    
+          if (validateEmail(email)) {
+              alert("Thank you for signing up!");
+              // Additional logic for handling the newsletter signup can be added here
+          } else {
+              alert("Please enter a valid email address.");
+          }
+      });
+    
+      // Function to validate email address
+      function validateEmail(email) {
+          var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          return re.test(email);
+      }
+    
+      // Load Product Details Based on URL Parameter
+      document.addEventListener('DOMContentLoaded', function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id');
+    
+        if (productId) {
+          // You would fetch the product details from your backend or a local data source
+          // For simplicity, we are using hardcoded details here
+          const productDetails = {
+            1: {
+              name: 'Rose Gold Embellished Gown',
+              price: '₹7,000',
+              image: 'images/products/dress1.jpg',
+              smallImages: ['images/products/dress1.1.jpg', 'images/products/dress1.2.jpg', 'images/products/dress1.3.jpg', 'images/products/dress1.4.jpg'],
+              description: [
+                'A net-fabricated rose gold gown with cape sleeves, adorned with cutdana, sequins, and beadwork.',
+                'See size chart for length and fit.',
+                'SKU: FM3677-1',
+                'Color: Rose Gold',
+                'Material: Net',
+                'Neck Design: Sweetheart',
+                'Sleeves: Cape Sleeve'
+              ],
+              authenticityCode: 'RG123456'
+            },
+    
+            2: {
+              name: 'Multi-colored Printed Lehenga',
+              price: '₹13,440',
+              image: 'images/products/dress2.jpg',
+              smallImages: ['images/products/dress2.jpg','images/products/dress2.1.jpg', 'images/products/dress2.2.jpg'],
+              description: 'This is a vibrant, multi-colored printed lehenga featuring intricate thread work. It is paired with a matching net dupatta, completing the festive and eye-catching ensemble. See size chart for length and fit. SKU: FM3665-3 Color: MultiColor, Material: Raw Silk & Net, Neck Design: Sweetheart, Sleeves: Short Sleeve',
+              authenticityCode: 'MP123456' 
+            },
+    
+            3: {
+              name: 'Shri Krishna Dress for Baby Boy & Girl',
+              price: '₹546',
+              image: 'images/products/dress7.jpg',
+              smallImages: [
+                'images/products/dress7.jpg', 
+                'images/products/dress7.1.jpg', 
+                'images/products/dress7.2.jpg', 
+                'images/products/dress7.3.jpg', 
+                'images/products/dress7.4.jpg'
+              ],
+              description: [
+                'Material: Crafted from premium, soft cotton, providing maximum comfort and breathability for your baby’s delicate skin.',
+                'Occasion: Ideal for festivals, religious ceremonies, cultural events, and themed photoshoots, adding a touch of divine elegance to any occasion.',
+                'Included: The set comprises 1 top, 1 dhoti, 1 mala, 1 patka, 1 mukut, 1 basuri, 1 pair of earrings, and 1 bajuband, offering a complete and authentic Krishna look.',
+                'Divine Design: Unisex and perfectly tailored for infants and kids, featuring a vibrant yellow hue and intricately designed accessories that embody the spirit of Lord Krishna.',
+                'Care Instructions: Easy to care for; gently hand wash with mild detergent and air dry to maintain the outfit’s softness and vibrant colors, ensuring it remains a cherished ensemble for future celebrations.'
+              ],
+              authenticityCode: 'SKB123456'
+            },
+            4: {
+              name: 'Navy Blue Lehenga Set',
+              price: '₹6,720',
+              image: 'images/products/dress4.jpg',
+              smallImages: ['images/products/dress4.jpg', 'images/products/dress4.1.jpg', 'images/products/dress4.2.jpg', 'images/products/dress4.3.jpg'],
+              description: 'This is a stunning blue lehenga featuring intricate sequin and embroidery work throughout. Net Dupatta. See size chart for length and fit. SKU: FM3658-3 Color: Navy Blue Material: Net Neck Design: Sweetheart Sleeves: Sleeveless'
+            }
+            // Add more products here
+          };
+    
+          const product = productDetails[productId];
+    
+          if (product) {
+            document.getElementById('MainImg').src = product.image;
+            document.querySelectorAll('.small-img').forEach((img, index) => {
+              img.src = product.smallImages[index] || '';
+            });
+            document.getElementById('product-name').textContent = product.name;
+            document.getElementById('product-price').textContent = product.price;
+            document.getElementById('product-description').textContent = product.description;
+
+            // Set the authenticity code
+            document.getElementById('auth-code').textContent = product.authenticityCode;
+
+            // Set product description
+            const descriptionElem = document.getElementById('product-description');
+            descriptionElem.innerHTML = product.description.map(line => `<li>${line}</li>`).join('');
+          }
+        }
+      });
+    </script>
+
+
+
+
+    <script>
+      // Check login status when any user-specific action is taken
+      document.addEventListener('DOMContentLoaded', function() {
+          const isLoggedIn = localStorage.getItem('isLoggedIn');
+  
+          // Example: Redirect if accessing a user-specific feature
+          const userIcon = document.querySelector('.fa-user');
+          if (userIcon) {
+              userIcon.parentElement.addEventListener('click', function(event) {
+                  event.preventDefault();
+                  if (isLoggedIn === 'true') {
+                      window.location.href = 'myaccount.html';
+                  } else {
+                      window.location.href = 'login.html';
+                  }
+              });
+          }
+      });
+    </script>
+
+    <script>
+      document.getElementById("generate-qrcode-btn").addEventListener("click", function() {
+        // Show the modal
+        document.getElementById("qr-modal").style.display = "block";
+      
+        // Example product history data
+        const productHistory = [
+          { dateIssued: "2024-11-15", daysUsed: 5 },
+          { dateIssued: "2024-11-20", daysUsed: 3 },
+          { dateIssued: "2024-11-25", daysUsed: 7 }
+        ];
+      
+        // URL where the product history will be displayed
+        const url = `product_details.html?data=${encodeURIComponent(JSON.stringify(productHistory))}`;
+      
+        // Generate the QR Code using a QR Code library (like `qrcode.js`)
+        const qrcode = new QRCode(document.getElementById("qrcode"), {
+          text: url, // Encode the URL with product history as URL parameter
+          width: 400,
+          height: 400,
+          colorDark: "#000000",
+          colorLight: "#ffffff",
+          correctLevel: QRCode.CorrectLevel.H
+        });
+      });
+    
+      // Close the modal when the close button is clicked
+      document.getElementById("close-modal").addEventListener("click", function() {
+        document.getElementById("qr-modal").style.display = "none";
+        
+        // Optionally, clear the QR code after closing the modal
+        const qrContainer = document.getElementById("qrcode");
+        qrContainer.innerHTML = ""; // Clears the QR Code
+      });
+      
+      // Close the modal if clicked outside the content area
+      window.addEventListener("click", function(event) {
+        const modal = document.getElementById("qr-modal");
+        if (event.target === modal) {
+          modal.style.display = "none";
+          
+          // Optionally, clear the QR code when closing the modal
+          const qrContainer = document.getElementById("qrcode");
+          qrContainer.innerHTML = ""; // Clears the QR Code
+        }
+      });
+      
+      
+    </script>
+    
+    
+  </body>
+</html>
